@@ -1,0 +1,24 @@
+database:
+  type: sqlite
+  path: ../../../enterprise.db
+
+knowledge_base:
+  root_path: ../../../knowledge
+  index_type: bm25
+
+#  双模式 LLM 配置（改这里切换）
+llm:
+  # 切换模式：选 ollama / openai
+  provider: "ollama"  
+  
+  # 模型名
+  model: "deepseek-r1:8b"  # 本地用这个，远程可以写 gpt-4o-mini
+  
+  # API 地址（本地/远程自动适配）
+  base_url: "http://localhost:11434/v1"  
+  
+  # API Key（远程才需要，本地留空就行）
+  # 支持环境变量：${OPENAI_API_KEY} 会自动读系统环境变量
+  api_key: ""
+
+timezone: Asia/Shanghai
